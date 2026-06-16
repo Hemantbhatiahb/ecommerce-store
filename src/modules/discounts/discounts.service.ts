@@ -7,6 +7,8 @@ export class DiscountsService {
   constructor(private readonly discountsRepository: DiscountsRepository) {}
 
   getUserCoupons(userId: string): Promise<Coupon[]> {
-    return this.discountsRepository.findCouponsByUserId(userId);
+    return this.discountsRepository.findValidCoupons(userId);
   }
+
+  
 }

@@ -1,6 +1,6 @@
 export interface Coupon {
   code: string;
   userId: string;
-  percentageOff: number;
+  percentage: number;
   isUsed: boolean;
 }

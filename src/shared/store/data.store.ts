@@ -28,7 +28,7 @@ export const store: DataStore = {
       role: USER_ROLES.CUSTOMER,
     },
     {
-      id: 'a-9001',
+      id: 'a-1001',
       name: 'Admin User',
       email: 'admin@gmail.com',
       role: USER_ROLES.ADMIN,

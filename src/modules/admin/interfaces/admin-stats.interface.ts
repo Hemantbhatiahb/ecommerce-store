@@ -1,5 +1,6 @@
 export interface AdminStats {
-  totalUsers: number;
-  totalProducts: number;
-  totalOrders: number;
+  itemsPurchased: number;
+  revenue: number;
+  discountCodesGenerated: number;
+  totalDiscountsGiven: number;
 }

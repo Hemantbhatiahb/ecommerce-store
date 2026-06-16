@@ -1,4 +1,11 @@
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+
 export class CheckoutDto {
-  userId: string = '';
-  couponCode?: string = '';
+  @IsString()
+  @IsNotEmpty()
+  userId!: string;
+
+  @IsOptional()
+  @IsString()
+  couponCode?: string;
 }
