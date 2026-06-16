@@ -116,6 +116,12 @@ Application will run on:
 http://localhost:3000
 ```
 
+Base API URL:
+
+```text
+http://localhost:3000/api/v1
+```
+
 ---
 
 ## Running Tests
@@ -134,14 +140,45 @@ npm run test:cov
 
 ---
 
+## Seeded Test Data
+
+### Customers
+
+```text
+u-1001
+u-1002
+```
+
+### Admin
+
+```text
+a-1001
+```
+
+### Products
+
+```text
+p-2001 - Wireless Mouse
+p-2002 - Mechanical Keyboard
+p-2003 - USB-C Hub
+```
+
+---
+
 ## API Endpoints
+
+All APIs are prefixed with:
+
+```text
+/api/v1
+```
 
 ### Products
 
 #### Get Products
 
 ```http
-GET /products
+GET /api/v1/products
 ```
 
 ---
@@ -151,7 +188,7 @@ GET /products
 #### Add Items To Cart
 
 ```http
-POST /cart
+POST /api/v1/cart
 ```
 
 Request:
@@ -171,7 +208,7 @@ Request:
 #### Get User Cart
 
 ```http
-GET /users/:userId/cart
+GET /api/v1/users/:userId/cart
 ```
 
 ---
@@ -181,7 +218,7 @@ GET /users/:userId/cart
 #### Checkout
 
 ```http
-POST /checkout
+POST /api/v1/checkout
 ```
 
 Request:
@@ -200,7 +237,7 @@ Request:
 #### Get User Coupons
 
 ```http
-GET /users/:userId/coupons
+GET /api/v1/users/:userId/coupons
 ```
 
 ---
@@ -210,13 +247,13 @@ GET /users/:userId/coupons
 #### Generate Coupon
 
 ```http
-POST /admin/:adminId/generate-discount
+POST /api/v1/admin/:adminId/generate-discount
 ```
 
 #### Get Store Statistics
 
 ```http
-GET /admin/:adminId/stats
+GET /api/v1/admin/:adminId/stats
 ```
 
 Returns:
@@ -278,11 +315,15 @@ Behavior:
 
 The Postman collection is available at:
 
+```text
 postman/ecommerce-store.postman_collection.json
+```
 
 Import it into Postman to test all APIs.
 
-## NOTES
+---
+
+## Notes
 
 Unit tests are included for core business logic, including:
 
@@ -291,9 +332,6 @@ Unit tests are included for core business logic, including:
 * Coupon validation
 * Reward coupon generation
 * Admin statistics
-
-
-
 
 ```
 ```
