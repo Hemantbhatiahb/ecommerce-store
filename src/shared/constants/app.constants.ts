@@ -1,0 +1,4 @@
+export const DISCOUNT_CONFIG = {
+  EVERY_NTH_ORDER: 5,
+  DISCOUNT_PERCENTAGE: 15,
+};

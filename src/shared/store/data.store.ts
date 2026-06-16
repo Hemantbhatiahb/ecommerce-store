@@ -5,7 +5,7 @@ import { Order } from '../interfaces/order.interface';
 import { Product } from '../interfaces/product.interface';
 import { User } from '../interfaces/user.interface';
 
-export interface InMemoryDataStore {
+export interface DataStore {
   users: User[];
   products: Product[];
   carts: Cart[];
@@ -13,7 +13,7 @@ export interface InMemoryDataStore {
   coupons: Coupon[];
 }
 
-export const inMemoryDataStore: InMemoryDataStore = {
+export const store: DataStore = {
   users: [
     {
       id: 'u-1001',

@@ -8,12 +8,24 @@ export class CartsController {
   constructor(private readonly cartsService: CartsService) {}
 
   @Post('cart')
-  addToCart(@Body() payload: AddToCartDto): Promise<Cart> {
-    return this.cartsService.addToCart(payload);
+  async addToCart(
+    @Body() payload: AddToCartDto,
+  ): Promise<{ message: string; data: Cart }> {
+    const cart = await this.cartsService.addToCart(payload);
+
+    return {
+      message: 'Item added to cart successfully',
+      data: cart,
+    };
   }
 
   @Get('users/:userId/cart')
-  getUserCart(@Param('userId') userId: string): Promise<Cart | null> {
-    return this.cartsService.getUserCart(userId);
+  async getUserCart(@Param('userId') userId: string): Promise<{ message: string; data: Cart | null }> {
+    const userCart =  await this.cartsService.getUserCart(userId);
+
+    return {
+      message: 'User cart fetched successfully',
+      data: userCart,
+    }
   }
 }
