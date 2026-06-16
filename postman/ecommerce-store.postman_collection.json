@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "1479e22a-3b9b-4a60-b685-3b58b3cafb36",
+		"name": "Ecommerce Store Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25876097"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Generate discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"u-1001\",\n    \"percentage\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/:adminId/generate-discount",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								":adminId",
+								"generate-discount"
+							],
+							"variable": [
+								{
+									"key": "adminId",
+									"value": "u-1001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/:adminId/stats",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								":adminId",
+								"stats"
+							],
+							"variable": [
+								{
+									"key": "adminId",
+									"value": "a-1001"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Others",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"u-1001\",\n    \"items\": [\n        {\n            \"productId\": \"p-2001\",\n            \"quantity\": 1111\n        },\n        {\n            \"productId\": \"p-2002\",\n            \"quantity\": 12\n        }\n    ]\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cart",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Cart",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"u-1001\"\n    // \"couponCode\": \"SAVE15\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/checkout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User coupons",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000/api",
+			"type": "default"
+		}
+	]
+}

@@ -274,9 +274,15 @@ Behavior:
 
 ---
 
-## Notes
+## Postman Collection
 
-A Postman collection is included in the repository for API testing.
+The Postman collection is available at:
+
+postman/ecommerce-store.postman_collection.json
+
+Import it into Postman to test all APIs.
+
+## NOTES
 
 Unit tests are included for core business logic, including:
 
@@ -285,6 +291,9 @@ Unit tests are included for core business logic, including:
 * Coupon validation
 * Reward coupon generation
 * Admin statistics
+
+
+
 
 ```
 ```
